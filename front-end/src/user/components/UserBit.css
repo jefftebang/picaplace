@@ -1,0 +1,53 @@
+.user-bit {
+  /* width: calc(45% - 2rem);
+  min-width: 17.5rem; */
+  width: 20rem;
+}
+
+.user-bit__li {
+  margin: 1rem 1rem;
+}
+
+.user-bit a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 1rem;
+  color: #292929;
+  background: #ffffff;
+}
+
+.user-bit a:hover,
+.user-bit a:active {
+  background: #292929;
+}
+
+.user-bit__content {
+  padding: 0 !important;
+}
+
+.user-bit__image {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.user-bit__info h4 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: normal;
+  color: #292929;
+}
+
+.user-bit:hover h4,
+.user-bit:active h4,
+.user-bit:hover h6,
+.user-bit:active h6 {
+  color: #0082be;
+}
+
+.user-bit__info h6 {
+  margin: 0;
+}

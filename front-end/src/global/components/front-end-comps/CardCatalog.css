@@ -1,0 +1,9 @@
+.card-catalog {
+  margin: 0 auto;
+  border: 1px solid;
+  border-color: lightgray;
+  border-radius: 2px;
+  padding: 1rem;
+  overflow: hidden;
+  background: white;
+}

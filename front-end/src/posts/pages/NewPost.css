@@ -1,0 +1,9 @@
+.post-form {
+  margin: 7rem auto;
+  max-width: 40rem;
+  width: 80%;
+}
+
+.post-desc {
+  height: 7rem !important;
+}

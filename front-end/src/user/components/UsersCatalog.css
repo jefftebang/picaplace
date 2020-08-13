@@ -1,0 +1,10 @@
+.users-catalog {
+  list-style: none;
+  margin: 7rem auto;
+  padding: 0;
+  width: 90%;
+  max-width: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

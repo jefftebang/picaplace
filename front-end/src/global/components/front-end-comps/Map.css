@@ -1,0 +1,17 @@
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+#menu {
+  position: absolute;
+  background: #2a2a2a;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  color: white;
+}
+
+.spacer {
+  margin-right: 1.3rem;
+}
