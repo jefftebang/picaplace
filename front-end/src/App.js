@@ -84,7 +84,7 @@ const App = () => {
   return (
     <Router>
       <UserContext.Provider value={{ userData, setUserData }}>
-        {sessionStorage.token && <MainNav />}
+        <MainNav />
         {routes}
       </UserContext.Provider>
     </Router>

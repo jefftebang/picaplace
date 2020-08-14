@@ -88,7 +88,6 @@ const Auth2 = () => {
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
-
                   <MDBInput
                     id="passwordCheck"
                     label="Confirm Password"
@@ -99,7 +98,6 @@ const Auth2 = () => {
                     onChange={(e) => setPasswordCheck(e.target.value)}
                   />
                 </div>
-
                 <MDBCol md="" className="mb-3">
                   <div className="custom-control custom-checkbox pl-3">
                     <input
@@ -110,7 +108,7 @@ const Auth2 = () => {
                       required
                     />
                     <label
-                      className="custom-control-label"
+                      className="custom-control-label agree"
                       htmlFor="invalidCheck"
                     >
                       Agree to terms and conditions
