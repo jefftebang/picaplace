@@ -30,7 +30,7 @@ const NewPost = () => {
         setIsLoading(false);
         setAddress("");
         setDescription("");
-        history.push("/");
+        history.push(`/${sessionStorage.getItem("creator")}/posts`);
       });
   };
 

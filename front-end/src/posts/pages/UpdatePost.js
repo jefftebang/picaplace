@@ -1,20 +1,35 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 import CardCatalog from "../../global/components/front-end-comps/CardCatalog";
+import { CommonLoading } from "react-loadingg";
 
 const UpdatePost = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [description, setDescription] = useState(
     props.location.state.description
   );
-
+  const history = useHistory();
   const postId = useParams().postId;
 
-  const postUpdateHandler = (e) => {
+  const postUpdateHandler = async (e) => {
     e.preventDefault();
-    const result = {
-      description,
+    setIsLoading(true);
+    const apiOptions = {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        description,
+      }),
     };
+
+    fetch(`http://localhost:5001/api/posts/${postId}`, apiOptions)
+      .then((res) => res.json())
+      .then((res) => {
+        setDescription("");
+        setIsLoading(false);
+        history.push(`/${sessionStorage.getItem("creator")}/posts`);
+      });
   };
 
   if (!postId) {
@@ -23,6 +38,10 @@ const UpdatePost = (props) => {
         <h2>Cannot find your post.</h2>
       </div>
     );
+  }
+
+  if (isLoading) {
+    return <CommonLoading color="grey" />;
   }
 
   return (

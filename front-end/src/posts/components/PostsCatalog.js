@@ -32,6 +32,7 @@ const PostsCatalog = (props) => {
           description={post.description}
           creatorId={post.creator}
           location={post.location}
+          onDelete={props.onDeletePost}
         />
       ))}
     </ul>

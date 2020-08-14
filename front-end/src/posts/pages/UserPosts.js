@@ -23,6 +23,12 @@ const UserPosts = () => {
     fetchPosts();
   }, [sendRequest, userId]);
 
+  const postDeleteHandler = (deletedPost) => {
+    setLoadedPosts((oldPosts) =>
+      oldPosts.filter((post) => post.id !== deletedPost)
+    );
+  };
+
   if (isLoading) {
     return <CommonLoading color="grey" />;
   }
@@ -30,7 +36,9 @@ const UserPosts = () => {
   return (
     <Fragment>
       {" "}
-      {!isLoading && loadedPosts && <PostsCatalog bits={loadedPosts} />}
+      {!isLoading && loadedPosts && (
+        <PostsCatalog bits={loadedPosts} onDeletePlace={postDeleteHandler} />
+      )}
     </Fragment>
   );
 };

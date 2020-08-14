@@ -19,6 +19,21 @@
   background: #ffffff;
 }
 
+.user-bit #noClick {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 1rem;
+  color: #292929;
+  background: #ffffff;
+}
+
+.user-bit #noClick:hover {
+  background: #292929;
+}
+
 .user-bit a:hover,
 .user-bit a:active {
   background: #292929;

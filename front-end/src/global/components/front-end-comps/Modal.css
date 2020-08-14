@@ -60,3 +60,10 @@
   opacity: 0;
   transition: all 200ms;
 }
+
+@media (max-width: 768px) {
+  .modal1 {
+    width: 94%;
+    left: 3%;
+  }
+}

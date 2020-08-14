@@ -1,6 +1,7 @@
 .post-bit {
   margin: 2rem 0;
   padding-top: 2rem;
+  width: 600px;
 }
 
 .post-bit__content {
@@ -27,15 +28,21 @@
   object-fit: cover;
 }
 
-.post-head {
+/* .post-head {
   height: 3.3rem;
-}
+  display: flex;
+} */
 
 .user__image {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: 0.8rem 1rem 0 1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 0.8rem 0 0 1rem;
+  position: absolute;
 }
+
+/* .creatorName {
+  margin: 0.75rem 0 0 1rem;
+} */
 
 .post-bit__info h2,
 .post-bit__info h3,
@@ -69,6 +76,7 @@
 
 .post-btn {
   width: 10rem;
+  background-color: #bdbdbd !important;
 }
 
 .post-btn:hover {
@@ -87,6 +95,19 @@
 
 @media (max-width: 768px) {
   .map-wrap {
-    height: 20rem;
+    height: 26rem;
+  }
+
+  .post-bit {
+    width: 21rem;
+  }
+
+  .post-btn {
+    width: 5.5rem;
+    height: 2rem;
+    padding: 0rem 0.5rem;
+    font-size: 8pt;
+    margin: 0.2rem !important;
+    background-color: #2a2a2a !important;
   }
 }

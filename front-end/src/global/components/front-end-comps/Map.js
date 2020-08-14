@@ -19,6 +19,7 @@ const Map = (props) => {
         zoom: zoom,
       });
 
+      // eslint-disable-next-line
       const marker = new mapboxgl.Marker()
         .setLngLat([center.Longitude, center.Latitude])
         .addTo(map);
@@ -27,16 +28,16 @@ const Map = (props) => {
         setMap(map);
         map.resize();
       });
-      var layerList = document.getElementById("menu");
-      var inputs = layerList.getElementsByTagName("input");
+      let layerList = document.getElementById("menu");
+      let inputs = layerList.getElementsByTagName("input");
 
       function switchLayer(layer) {
-        var layerId = layer.target.id;
+        let layerId = layer.target.id;
         map.setStyle("mapbox://styles/mapbox/" + layerId);
       }
       map.addControl(new mapboxgl.NavigationControl());
 
-      for (var i = 0; i < inputs.length; i++) {
+      for (let i = 0; i < inputs.length; i++) {
         inputs[i].onclick = switchLayer;
       }
     };

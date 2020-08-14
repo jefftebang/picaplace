@@ -15,3 +15,13 @@
 .spacer {
   margin-right: 1.3rem;
 }
+
+@media (max-width: 768px) {
+  .spacer {
+    margin-right: 0.6rem;
+  }
+
+  #menu {
+    font-size: 0.8rem;
+  }
+}

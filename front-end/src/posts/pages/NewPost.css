@@ -5,5 +5,5 @@
 }
 
 .post-desc {
-  height: 7rem !important;
+  min-height: 7rem !important;
 }

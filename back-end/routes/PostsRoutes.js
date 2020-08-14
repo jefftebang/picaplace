@@ -73,7 +73,7 @@ PostRouter.post(
       address,
       description,
       location: coordinates,
-      image: "https://picsum.photos/seed/picsum/200/300",
+      image: "https://mfiles.alphacoders.com/712/712326.jpg",
       creator,
     });
 

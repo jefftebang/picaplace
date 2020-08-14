@@ -1,18 +1,15 @@
-import React, { useState, Fragment, useContext } from "react";
+import React, { useState, Fragment } from "react";
 import "./Auth.css";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 import CardCatalog from "../../global/components/front-end-comps/CardCatalog";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ErrorNotice from "../../global/components/front-end-comps/ErrorNotice";
-import UserContext from "../../global/context/UserContext";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState();
-
-  const { setUserData } = useContext(UserContext);
 
   const loginSubmitHandler = async (e) => {
     e.preventDefault();

@@ -6,8 +6,11 @@ import Map from "../../global/components/front-end-comps/Map";
 import { MDBBtn } from "mdbreact";
 import { Link } from "react-router-dom";
 import Avatar from "../../global/components/front-end-comps/Avatar";
+import { useHttp } from "../../global/components/front-end-comps/http";
+import { CommonLoading } from "react-loadingg";
 
 const PostBit = (props) => {
+  const { isLoading, sendRequest } = useHttp();
   const [openMap, setOpenMap] = useState(false);
   const [openConfirm, setOpenConfirm] = useState(false);
 
@@ -27,8 +30,15 @@ const PostBit = (props) => {
     setOpenConfirm(false);
   };
 
-  const submitDeleteHandler = () => {
-    // console.log("Deleted");
+  const submitDeleteHandler = async () => {
+    setOpenConfirm(false);
+    try {
+      await sendRequest(
+        `http://localhost:5001/api/posts/${props.id}`,
+        "DELETE"
+      );
+      props.onDelete(props.id);
+    } catch (err) {}
   };
 
   return (
@@ -77,14 +87,16 @@ const PostBit = (props) => {
       </Modal>
       <li className="post-bit">
         <CardCatalog className="post-bit__content">
-          <div className="post-head">
-            <p>{props.name}</p>
-            <Link to={`/${sessionStorage.getItem("creator")}/posts`}></Link>
+          {isLoading && <CommonLoading color="grey" />}
+          {/* <div className="post-head">
+            <p className="creatorName">
+              <strong>Ctreator Name</strong>
+            </p>
+          </div> */}
+          <div className="post-bit__image">
             <div className="user__image">
               <Avatar image={props.image} alt={props.name} />
             </div>
-          </div>
-          <div className="post-bit__image">
             <img src={props.image} alt={props.location} />
           </div>
           <div className="post-bit__info">
@@ -96,35 +108,29 @@ const PostBit = (props) => {
             </p>
           </div>
           <div className="post-bit__actions">
-            <MDBBtn
-              onClick={openMapHandler}
-              color="grey grey lighten-1"
-              className="rounded-0 post-btn"
-            >
+            <MDBBtn onClick={openMapHandler} className="rounded-0 post-btn">
               VIEW ON MAP
             </MDBBtn>
-            <Link
-              to={{
-                pathname: `/posts/${props.id}`,
-                state: {
-                  description: props.description,
-                },
-              }}
-            >
-              <MDBBtn
-                color="grey grey lighten-1"
-                className="rounded-0 post-btn"
-              >
-                EDIT
-              </MDBBtn>
-            </Link>
-            <MDBBtn
-              color="grey grey lighten-1"
-              onClick={openDeleteHandler}
-              className="rounded-0 post-btn"
-            >
-              DELETE
-            </MDBBtn>
+            {sessionStorage.creator === props.creatorId && (
+              <Fragment>
+                <Link
+                  to={{
+                    pathname: `/posts/${props.id}`,
+                    state: {
+                      description: props.description,
+                    },
+                  }}
+                >
+                  <MDBBtn className="rounded-0 post-btn">EDIT</MDBBtn>
+                </Link>
+                <MDBBtn
+                  onClick={openDeleteHandler}
+                  className="rounded-0 post-btn"
+                >
+                  DELETE
+                </MDBBtn>
+              </Fragment>
+            )}
           </div>
         </CardCatalog>
       </li>
