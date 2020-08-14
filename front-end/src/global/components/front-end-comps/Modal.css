@@ -32,10 +32,29 @@
   color: white;
 }
 
+@media (min-width: 1201px) {
+  .modal-prompt {
+    width: 25rem;
+    left: 38% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal-prompt {
+    width: 25rem;
+    left: 28%;
+  }
+}
+
 @media (min-width: 768px) {
   .modal {
     left: calc(50% - 20rem);
     width: 40rem;
+  }
+
+  .modal-prompt {
+    width: 25rem;
+    left: 28%;
   }
 }
 

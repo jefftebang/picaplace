@@ -34,7 +34,7 @@ const PostBit = (props) => {
     setOpenConfirm(false);
     try {
       await sendRequest(
-        `http://localhost:5001/api/posts/${props.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/posts/${props.id}`,
         "DELETE"
       );
       props.onDelete(props.id);

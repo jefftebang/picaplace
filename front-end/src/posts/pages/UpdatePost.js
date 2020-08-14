@@ -23,7 +23,7 @@ const UpdatePost = (props) => {
       }),
     };
 
-    fetch(`http://localhost:5001/api/posts/${postId}`, apiOptions)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/posts/${postId}`, apiOptions)
       .then((res) => res.json())
       .then((res) => {
         setDescription("");

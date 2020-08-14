@@ -29,13 +29,13 @@ const App = () => {
         token = "";
       }
       const tokenRes = await axios.post(
-        "http://localhost:5001/api/users/tokenIsValid",
+        process.env.REACT_APP_BACKEND_URL + "/users/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
       if (tokenRes.data) {
         const userRes = await axios.get(
-          "http://localhost:5001/api/users/users",
+          "REACT_APP_BACKEND_URL/api/api/users/users",
           {
             headers: { "x-auth-token": token },
           }

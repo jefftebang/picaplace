@@ -15,7 +15,7 @@ const UserPosts = () => {
     const fetchPosts = async () => {
       try {
         const resData = await sendRequest(
-          `http://localhost:5001/api/posts/user/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/posts/user/${userId}`
         );
         setLoadedPosts(resData);
       } catch (err) {}

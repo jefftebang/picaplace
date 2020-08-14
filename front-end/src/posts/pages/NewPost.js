@@ -24,7 +24,7 @@ const NewPost = () => {
       }),
     };
 
-    fetch("http://localhost:5001/api/posts", apiOptions)
+    fetch(process.env.REACT_APP_BACKEND_URL + "/posts", apiOptions)
       .then((res) => res.json())
       .then((res) => {
         setIsLoading(false);

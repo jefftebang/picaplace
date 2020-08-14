@@ -9,8 +9,7 @@ const Map = (props) => {
   const { center, zoom } = props;
 
   useEffect(() => {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiamVmZnRlYmFuZzAxMTgiLCJhIjoiY2tkbGp0bTJvMG83ZjJycGZuaXNod3JrYSJ9.cCOBm77H7fIlkMDRU9_EqQ";
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,

@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const API_KEY = "0_AbxLKx_BsWz5X3w3qKpWApbkel5V5HNMT1StPCNsM";
+const API_KEY = process.env.REACT_APP_HERE_API_KEY;
 
 async function addressToCoordinates(address) {
   const response = await axios.get(

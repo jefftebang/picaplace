@@ -17,7 +17,7 @@ const Login = () => {
     try {
       const loginUser = { email, password };
       const loginRes = await axios.post(
-        "http://localhost:5001/api/users/login",
+        process.env.REACT_APP_BACKEND_URL + "/users/login",
         loginUser
       );
 

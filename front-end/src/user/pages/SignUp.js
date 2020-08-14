@@ -26,7 +26,10 @@ const Auth2 = () => {
         password,
         passwordCheck,
       };
-      await axios.post("http://localhost:5001/api/users/signup", newUser);
+      await axios.post(
+        process.env.REACT_APP_BACKEND_URL + "/users/signup",
+        newUser
+      );
       setUserData({
         token: undefined,
         user: undefined,
